@@ -1,7 +1,7 @@
 monaa2imitator
 ==============
 
-[![CircleCI](https://circleci.com/gh/MasWag/monaa2imitator.svg?style=svg)](https://circleci.com/gh/MasWag/monaa2imitator)
+[![GitHub Actions Badge](https://github.com/MasWag/monaa2imitator/workflows/hspec/badge.svg)](https://github.com/MasWag/monaa2imitator/actions?query=workflow%3Ahspec)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](./LICENSE)
 
 Translate [MONAA](https://github.com/MasWag/monaa)'s dot language to the modeling language of [IMITATOR](https://www.imitator.fr).
