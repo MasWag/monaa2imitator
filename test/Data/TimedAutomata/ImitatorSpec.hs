@@ -31,7 +31,7 @@ spec = do
     it "show update" $ do
       let variable = Variable "roboClock"
           update = Update variable "0"
-          expected = "roboClock := 0"
+          expected = "xroboClock := 0"
         in
         show update `shouldBe` expected
         
@@ -45,7 +45,7 @@ spec = do
           update = Update (Variable clock) "0"
           target = "enterF4"
           transition = Transition guard (Just label) [update] target
-          expected = "when BCET_F3_F4 < roboClock & roboClock < WCET_F3_F4 sync enterF4 do {roboClock := 0} goto enterF4;"
+          expected = "when BCET_F3_F4 < roboClock & roboClock < WCET_F3_F4 sync enterF4 do {xroboClock := 0} goto enterF4;"
         in
         show transition `shouldBe` expected
 
@@ -62,7 +62,7 @@ spec = do
           invariant = Data.TimedAutomata.Imitator.LE clock wcet
           location = Loc "leaveF3" invariant [transition]
           expected = ["loc leaveF3: invariant roboClock <= WCET_F3_F4",
-                      "\twhen BCET_F3_F4 < roboClock & roboClock < WCET_F3_F4 sync enterF4 do {roboClock := 0} goto enterF4;"]
+                      "\twhen BCET_F3_F4 < roboClock & roboClock < WCET_F3_F4 sync enterF4 do {xroboClock := 0} goto enterF4;"]
         in
         show location `shouldBe` (unlines expected)
 
@@ -175,14 +175,14 @@ spec = do
                        "\t& worst_watering_interval >= 0",
                        ";",
                        "",
-                       "(************************************************************)",
-                       "(* Property specification *)",
-                       "(************************************************************)",
-                       "",
-                       "property := unreachable",
-                       "\tloc[G1] = unsafe",
-                       ";",
-                       "",
+                       -- "(************************************************************)",
+                       -- "(* Property specification *)",
+                       -- "(************************************************************)",
+                       -- "",
+                       -- "property := unreachable",
+                       -- "\tloc[G1] = unsafe",
+                       -- ";",
+                       -- "",
                        "(************************************************************)",
                        "(* The end *)",
                        "(************************************************************)",
@@ -242,14 +242,14 @@ spec = do
                       "\t(*------------------------------------------------------------*)",
                        ";",
                        "",
-                       "(************************************************************)",
-                       "(* Property specification *)",
-                       "(************************************************************)",
-                       "",
-                       "property := unreachable",
-                       "\tloc[G1] = unsafe",
-                       ";",
-                       "",
+                       -- "(************************************************************)",
+                       -- "(* Property specification *)",
+                       -- "(************************************************************)",
+                       -- "",
+                       -- "property := unreachable",
+                       -- "\tloc[G1] = unsafe",
+                       -- ";",
+                       -- "",
                        "(************************************************************)",
                        "(* The end *)",
                        "(************************************************************)",
