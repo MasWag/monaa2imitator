@@ -25,7 +25,7 @@ data Variable =
   VariableWithC String Constraints -- variable with initial value constraint
 
 instance Show Variable where
-  show (Variable str) = str
+  show (Variable str) = "x" ++ str
   show (VariableWithV str _ ) = str
   show (VariableWithC str _ ) = str
 
