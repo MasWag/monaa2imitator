@@ -171,7 +171,7 @@ instance Show Model where
                        "end"]
 
     in
-      "var\n\n" ++ clockStr ++ paramStr ++ automataStr ++ initStr ++ unlines propertyHeader ++ show property ++ "\n" ++ unlines footer
+      "var\n\n" ++ clockStr ++ paramStr ++ automataStr ++ initStr {- ++ unlines propertyHeader ++ show property ++ "\n" --} ++ unlines footer
 
 
 fromTextSingle :: T.Text -> Constraints
