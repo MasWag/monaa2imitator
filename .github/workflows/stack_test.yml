@@ -7,7 +7,7 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [ubuntu-latest, macOS-latest]
+        os: [ubuntu-latest, macos-latest]
         plan:
         - { build: stack, resolver: "--resolver lts-14"  }   # ghc-8.6.5
 
@@ -15,8 +15,9 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: Setup stack
-      uses: mstksg/setup-stack@v1
+    - name: install stack for macOS
+      if:  matrix.os  == 'macos-latest'
+      run: brew install haskell-stack
 
     - name: test
       run: stack --no-terminal ${{ matrix.plan.resolver }} test
